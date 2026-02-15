@@ -18,7 +18,8 @@
         display: flex; flex-direction: column;
         justify-content: center; align-items: center;
         text-align: center;
-        padding: 20px; 
+        padding-bottom: env(safe-area-inset-bottom); 
+        padding-top: env(safe-area-inset-top);
         box-sizing: border-box; 
         background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%),
                     url('../assets/img/bg.png') no-repeat center center/cover;
@@ -77,3 +78,23 @@
         100% { transform: scale(1); }
     }
     h1 { animation: pulse 2s infinite ease-in-out; }
+
+    @media (max-height: 700px) {
+    h1 {
+        font-size: 2rem; /* On réduit le titre */
+    }
+    .countdown-container {
+        gap: 10px;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+    .time-value {
+        font-size: 1.5rem; /* On réduit les chiffres */
+    }
+    .time-segment {
+        min-width: 50px;
+    }
+    .logo-container img {
+        max-width: 120px; /* On réduit le logo */
+    }
+}
